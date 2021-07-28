@@ -3,6 +3,12 @@ import CoreData
 protocol StorageProviderContract {
     func saveMovie(named name: String)
     func getAllMovies() -> [Movie]
+    func deleteMovie(_ movie: Movie) throws
+    func updateMovies()
+}
+
+enum StorageProviderError: Error {
+    case couldNotSaveChanges
 }
 
 class StorageProvider {
@@ -41,6 +47,27 @@ extension StorageProvider: StorageProviderContract {
         } catch {
             print("Failed to fetch movies: \(error)")
             return []
+        }
+    }
+    
+    func deleteMovie(_ movie: Movie) throws {
+        persistentContainer.viewContext.delete(movie)
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save context: \(error)")
+            throw StorageProviderError.couldNotSaveChanges
+        }
+    }
+    
+    func updateMovies() {
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save context: \(error)")
         }
     }
 }

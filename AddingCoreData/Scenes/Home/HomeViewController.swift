@@ -46,6 +46,29 @@ extension HomeViewController {
         }
         view.endEditing(true)
     }
+    
+    private func didTapUpdateAction(forModel model: HomeMovieCellModel) {
+        let alertController = UIAlertController(title: "Update Movie", message: nil, preferredStyle: .alert)
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "New movie name"
+        }
+        
+        let updateAction = UIAlertAction(title: "Update", style: .default) { [unowned alertController, weak self] _ in
+            guard let strongSelf = self else { return }
+            if let newMovieName = alertController.textFields?.first?.text,
+               !newMovieName.isEmpty {
+                strongSelf.presenter.didEnteredNewMovieName(newMovieName, model: model)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(updateAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - HomeViewContract
@@ -71,16 +94,32 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
-            print("Delete tapped")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, completion in
+            guard let strongSelf = self else {
+                completion(true)
+                return
+            }
+            
+            strongSelf.presenter.didTapDeleteMovie(model: strongSelf.cellModels[indexPath.row])
             completion(true)
         }
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let updateAction = UIContextualAction(style: .normal, title: "Update") { [weak self] _, _, completion in
+            guard let strongSelf = self else {
+                completion(true)
+                return
+            }
+            strongSelf.didTapUpdateAction(forModel: strongSelf.cellModels[indexPath.row])
+            completion(true)
+        }
+        
+        updateAction.backgroundColor = .systemOrange
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, updateAction])
     }
 }
 
-// MARK: - Private Methods
+// MARK: - SetupUI
 private extension HomeViewController {
     private func setupUI() {
         setupTextField()
