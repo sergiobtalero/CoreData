@@ -35,7 +35,7 @@ extension HomePresenter: HomePresenterContract {
     }
     
     func didTapDeleteMovie(model: HomeMovieCellModel) {
-        guard let movie = movies.first(where: { $0.name == model.movieName }) else {
+        guard let movie = movies.first(where: { $0.title == model.movieName }) else {
             return
         }
         do {
@@ -52,10 +52,10 @@ extension HomePresenter: HomePresenterContract {
     }
     
     func didEnteredNewMovieName(_ newName: String, model: HomeMovieCellModel) {
-        guard let movie = movies.first(where: { $0.name == model.movieName }) else {
+        guard let movie = movies.first(where: { $0.title == model.movieName }) else {
             return
         }
-        movie.name = newName
+        movie.title = newName
         storageProvider.updateMovies()
     }
 }
@@ -67,7 +67,7 @@ private extension HomePresenter {
     }
     
     private func makeMovieCellModels() {
-        let models = movies.map { HomeMovieCellModel(movieName: $0.name ?? "") }
+        let models = movies.map { HomeMovieCellModel(movieName: $0.title ?? "") }
         view.renderMovies(models)
     }
 }

@@ -15,6 +15,9 @@ class StorageProvider {
     let persistentContainer: NSPersistentContainer
     
     init() {
+        // Preferred to be set before initializing the persistent container
+        ValueTransformer.setValueTransformer(UIImageTransformer(), forName: NSValueTransformerName("UIImageTransformer"))
+        
         // Needs to be the name of the model file
         persistentContainer = NSPersistentContainer(name: "Model")
         
@@ -29,7 +32,7 @@ class StorageProvider {
 extension StorageProvider: StorageProviderContract {
     func saveMovie(named name: String) {
         let movie = Movie(context: persistentContainer.viewContext)
-        movie.name = name
+        movie.title = name
         
         do {
             try persistentContainer.viewContext.save()

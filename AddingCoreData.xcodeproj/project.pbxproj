@@ -20,6 +20,8 @@
 		1BE0C61C26B251A2007EC5CD /* HomeMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C60F26B251A2007EC5CD /* HomeMovieTableViewCell.swift */; };
 		1BE0C61D26B251A2007EC5CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0C61126B251A2007EC5CD /* LaunchScreen.storyboard */; };
 		1BE0C61E26B251A2007EC5CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0C61326B251A2007EC5CD /* Assets.xcassets */; };
+		1BE0C62126B2EE87007EC5CD /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C62026B2EE87007EC5CD /* UIImageTransformer.swift */; };
+		1BE0C62326B2F601007EC5CD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C62226B2F601007EC5CD /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		1BE0C60F26B251A2007EC5CD /* HomeMovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMovieTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0C61126B251A2007EC5CD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BE0C61326B251A2007EC5CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BE0C62026B2EE87007EC5CD /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
+		1BE0C62226B2F601007EC5CD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +178,9 @@
 		1BE0C60726B251A2007EC5CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1BE0C61F26B2EE7C007EC5CD /* Transformers */,
 				1BE0C60826B251A2007EC5CD /* Model.xcdatamodeld */,
+				1BE0C62226B2F601007EC5CD /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +226,14 @@
 				1BE0C61326B251A2007EC5CD /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BE0C61F26B2EE7C007EC5CD /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0C62026B2EE87007EC5CD /* UIImageTransformer.swift */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +373,9 @@
 			files = (
 				1BE0C61B26B251A2007EC5CD /* HomePresenter.swift in Sources */,
 				1BE0C61426B251A2007EC5CD /* AppDelegate.swift in Sources */,
+				1BE0C62126B2EE87007EC5CD /* UIImageTransformer.swift in Sources */,
 				1BE0C61626B251A2007EC5CD /* StorageProvider.swift in Sources */,
+				1BE0C62326B2F601007EC5CD /* Movie.swift in Sources */,
 				1BE0C61C26B251A2007EC5CD /* HomeMovieTableViewCell.swift in Sources */,
 				1BE0C61926B251A2007EC5CD /* Model.xcdatamodeld in Sources */,
 				1BE0C61526B251A2007EC5CD /* SceneDelegate.swift in Sources */,
