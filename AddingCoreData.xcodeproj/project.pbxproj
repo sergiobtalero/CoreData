@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B441CD026B892B300EA9D1A /* MoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B441CCF26B892B300EA9D1A /* MoviesProvider.swift */; };
 		1BE0C5CE26B1F052007EC5CD /* AddingCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C5CD26B1F052007EC5CD /* AddingCoreDataTests.swift */; };
 		1BE0C5D926B1F052007EC5CD /* AddingCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C5D826B1F052007EC5CD /* AddingCoreDataUITests.swift */; };
 		1BE0C5ED26B1F763007EC5CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1BE0C5EC26B1F763007EC5CD /* SnapKit */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B441CCF26B892B300EA9D1A /* MoviesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesProvider.swift; sourceTree = "<group>"; };
 		1BE0C5B326B1F052007EC5CD /* AddingCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddingCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE0C5C926B1F052007EC5CD /* AddingCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddingCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE0C5CD26B1F052007EC5CD /* AddingCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCoreDataTests.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1BE0C60226B251A2007EC5CD /* StorageProvider.swift */,
+				1B441CCF26B892B300EA9D1A /* MoviesProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE0C61B26B251A2007EC5CD /* HomePresenter.swift in Sources */,
+				1B441CD026B892B300EA9D1A /* MoviesProvider.swift in Sources */,
 				1BE0C61426B251A2007EC5CD /* AppDelegate.swift in Sources */,
 				1BE0C62126B2EE87007EC5CD /* UIImageTransformer.swift in Sources */,
 				1BE0C61626B251A2007EC5CD /* StorageProvider.swift in Sources */,

@@ -21,8 +21,8 @@
         <relationship name="characters" toMany="YES" deletionRule="Cascade" destinationEntity="Character" inverseName="movie" inverseEntity="Character"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-1221.89111328125" positionY="-3072.907684326172" width="128" height="163"/>
-        <element name="Actor" positionX="-1593.501708984375" positionY="-2998.645935058594" width="128" height="88"/>
-        <element name="Character" positionX="-1247.63037109375" positionY="-2775.825866699219" width="128" height="88"/>
+        <element name="Movie" positionX="-1668.26220703125" positionY="-3139.468444824219" width="128" height="163"/>
+        <element name="Actor" positionX="-1313.53466796875" positionY="-3135.811889648438" width="128" height="88"/>
+        <element name="Character" positionX="-1304.907958984375" positionY="-2970.666259765625" width="128" height="88"/>
     </elements>
 </model>
